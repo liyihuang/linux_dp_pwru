@@ -1,0 +1,18 @@
+cluster:
+  name: kind-kind
+ipam:
+  mode: kubernetes
+operator:
+  replicas: 1
+serviceAccounts:
+  cilium:
+    name: cilium
+  operator:
+    name: cilium-operator
+
+autoDirectNodeRoutes: true
+routingMode: native
+ipv4NativeRoutingCIDR: 10.244.0.0/16
+
+endpointRoutes:
+  enabled: false
